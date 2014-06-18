@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Duelo de Matemática</string>
+    <string name="splashscreen_title">Duelo de\nMatemática</string>
+    <string name="welcome_title">Bem-vindo ao\nDuelo de Matemática!</string>
+    <string name="welcome_formula">Crie uma fórmula matemática e desafie seu amigo a resolvê-la</string>
+    <string name="challenge">Desafiar</string>
+    <string name="answer">Responder</string>
+    <string name="what_is_the_result">Qual o resultado?</string>
+    <string name="you_turn">Agora é a sua vez de desafiar</string>
+    <string name="correct">Você acertou!</string>
+    <string name="wrong">Você errou!</string>
+
+</resources>

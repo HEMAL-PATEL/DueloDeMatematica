@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:weightSum="1" >
+    
+    <LinearLayout 
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="0.8"
+    	android:weightSum="1"
+	    android:orientation="vertical" >
+	    
+		    <LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="0dp"
+			    android:layout_weight="0.5"
+			    android:orientation="vertical"
+			    android:rotation="180" >
+		    
+			    <fragment
+			        android:id="@+id/fragCalculatorP1"
+			        android:name="com.adrielcafe.duelodematematica.CalculatorFragment"
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent" />
+		    
+			    <fragment
+			        android:id="@+id/fragChallengeP2"
+			        android:name="com.adrielcafe.duelodematematica.ChallengeFragment"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			    	android:layout_gravity="center" />
+		    
+		    </LinearLayout>
+		    
+		    <LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="0dp"
+			    android:layout_weight="0.5"
+			    android:orientation="vertical" >
+			    
+			    <fragment
+			        android:id="@+id/fragCalculatorP2"
+			        android:name="com.adrielcafe.duelodematematica.CalculatorFragment"
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent" />
+			    
+			    <fragment
+			        android:id="@+id/fragChallengeP1"
+			        android:name="com.adrielcafe.duelodematematica.ChallengeFragment"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			    	android:layout_gravity="center" />
+			    
+		    </LinearLayout>
+	    
+    </LinearLayout>
+    
+    <LinearLayout
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="0.2"
+	    android:orientation="vertical"
+	    android:weightSum="1" >
+        
+        <TextView
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="0.3" />
+        
+        <TextView
+            android:id="@+id/scoreP1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:rotation="90"
+	    	android:singleLine="true"
+            android:textColor="#FF8800"
+            android:textSize="60sp"
+            android:text="0" />
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:rotation="90"
+	    	android:singleLine="true"
+            android:textSize="60sp"
+            android:text="×" />
+        
+        <TextView
+            android:id="@+id/scoreP2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:rotation="90"
+	    	android:singleLine="true"
+            android:textColor="#FF8800"
+            android:textSize="60sp"
+            android:text="0" />
+        
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="0dp"
+		    android:layout_weight="0.3"
+			android:layout_margin="15dp"
+		    android:orientation="vertical"
+		    android:weightSum="1" >
+			    
+	        <ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="0dp"
+				android:layout_weight="0.5"
+				android:layout_margin="10dp"
+	            android:rotation="90"
+	            android:onClick="reset"
+	            android:src="@drawable/ic_reset" />
+	        
+	        <ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="0dp"
+				android:layout_weight="0.5"
+				android:layout_margin="10dp"
+	            android:rotation="90"
+	            android:onClick="about"
+	            android:src="@drawable/ic_about" />
+        
+        </LinearLayout>
+        
+	</LinearLayout>
+</LinearLayout>
