@@ -1,12 +1,12 @@
 package com.adrielcafe.duelodematematica;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import de.congrace.exp4j.ExpressionBuilder;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	private static final int ACTION_CHALLENGE = 1;
 	private static final int ACTION_ANSWER = 2;	
 	private static final int PLAYER_1 = 1;
