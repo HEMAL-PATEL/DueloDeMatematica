@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
 		tv.setText(Html.fromHtml(message));
 		tv.setPadding(15, 15, 15, 15);
 		tv.setLayoutParams(layout);
+		tv.setBackgroundColor(getResources().getColor(android.R.color.white));
         tv.setMovementMethod(LinkMovementMethod.getInstance());
         tv.setTextAppearance(this, android.R.style.TextAppearance_Medium);
 		new AlertDialog.Builder(this)
