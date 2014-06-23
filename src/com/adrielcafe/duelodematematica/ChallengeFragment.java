@@ -43,7 +43,7 @@ public class ChallengeFragment extends Fragment  {
 	public void setAnswerMode(boolean correct, int result){
 		imageView.setImageResource(correct ? R.drawable.won : R.drawable.lost);
 		titleView.setText(correct ? correctText : wrogText);
-		formulaView.setText(correct ? getString(R.string.you_turn) : "Resposta correta: " + result + "\n" + getString(R.string.you_turn));
+		formulaView.setText(correct ? getString(R.string.you_turn) : getString(R.string.correct_answer)+ ": " + result + "\n" + getString(R.string.you_turn));
 	}
 
 	public String getFormula(){

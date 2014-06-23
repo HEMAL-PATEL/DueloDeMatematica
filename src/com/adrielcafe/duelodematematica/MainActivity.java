@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import de.congrace.exp4j.ExpressionBuilder;
 
 public class MainActivity extends Activity {
@@ -75,10 +76,9 @@ public class MainActivity extends Activity {
 	}
 	
 	public void about(View v){
-		String message = "<b>Duelo de Matemática</b> é um software livre, seu código fonte está disponível no <a href='https://github.com/adrielcafe/DueloDeMatematica'>GitHub</a>.<br><br>Desenvolvido por:<br>Adriel Café (ac@adrielcafe.com)";
 		LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
 		TextView tv = new TextView(this);
-		tv.setText(Html.fromHtml(message));
+		tv.setText(Html.fromHtml(getString(R.string.about)));
 		tv.setPadding(15, 15, 15, 15);
 		tv.setLayoutParams(layout);
 		tv.setBackgroundColor(getResources().getColor(android.R.color.white));
@@ -122,24 +122,36 @@ public class MainActivity extends Activity {
 			case ACTION_ANSWER:
 				action = ACTION_CHALLENGE;
 				if(R.id.fragCalculatorP1 == id){
-					fragCalculatorP1.setChallengeMode();
-					showAnswer(PLAYER_1, fragChallengeP1.getFormula(), fragCalculatorP1.getFormula());
+					if(!fragCalculatorP1.getFormula().isEmpty()){
+						fragCalculatorP1.setChallengeMode();
+						showAnswer(PLAYER_1, fragChallengeP1.getFormula(), fragCalculatorP1.getFormula());
+					}
 				} else if(R.id.fragCalculatorP2 == id){
-					fragCalculatorP2.setChallengeMode();
-					showAnswer(PLAYER_2, fragChallengeP2.getFormula(), fragCalculatorP2.getFormula());
+					if(!fragCalculatorP2.getFormula().isEmpty()){
+						fragCalculatorP2.setChallengeMode();
+						showAnswer(PLAYER_2, fragChallengeP2.getFormula(), fragCalculatorP2.getFormula());
+					}
 				}
 				break;
 			case ACTION_CHALLENGE:
 			default:
 				action = ACTION_ANSWER;
 				if(R.id.fragCalculatorP1 == id){
-					fragChallengeP1.setChallengeMode(); 
-					fragCalculatorP1.setAnswerMode();
-					showChallenge(PLAYER_1, fragCalculatorP1.getFormula());
+					if(fragCalculatorP1.getFormula().isEmpty()){
+						Toast.makeText(this, getString(R.string.invalid_formula), Toast.LENGTH_SHORT).show();
+					} else {
+						fragChallengeP1.setChallengeMode(); 
+						fragCalculatorP1.setAnswerMode();
+						showChallenge(PLAYER_1, fragCalculatorP1.getFormula());
+					}
 				} else if(R.id.fragCalculatorP2 == id) {
-					fragChallengeP2.setChallengeMode();
-					fragCalculatorP2.setAnswerMode();
-					showChallenge(PLAYER_2, fragCalculatorP2.getFormula());
+					if(fragCalculatorP2.getFormula().isEmpty()){
+						Toast.makeText(this, getString(R.string.invalid_formula), Toast.LENGTH_SHORT).show();
+					} else {
+						fragChallengeP2.setChallengeMode();
+						fragCalculatorP2.setAnswerMode();
+						showChallenge(PLAYER_2, fragCalculatorP2.getFormula());
+					}
 				}
 				break;
 		}
